@@ -18,6 +18,9 @@
 		String is_store = request.getParameter("is_store");
 		ArrayList<User> list = user_db.db_list();
 		
+		if(target.equals("null")){
+			target="index.jsp";
+		}
 		
 		for (int i = 0; i < list.size(); i++) {
 			if (user_id.equals(list.get(i).getUser_id())) {
