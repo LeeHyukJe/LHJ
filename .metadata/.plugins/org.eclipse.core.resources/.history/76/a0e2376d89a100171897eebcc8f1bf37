@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link rel="stylesheet" href="list.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table class="type06">
+	<tr>
+	<th>아이디</th>
+	<th>이름</th>
+	<th>이메일</th>
+	<th>학교</th>
+	</tr>
+    <tr>
+        <th scope="row">항목명</th>
+        <td>내용이 들어갑니다.</td>
+        <td>학교</td>
+        <td class="even">이메일</td>
+    </tr>
+    <tr>
+        <th scope="row" class="even">항목명</th>
+        <td class="even">내용이 들어갑니다.</td>
+        <td>학교</td>
+        <td>이메일</td>
+    </tr>
+    <tr>
+        <th scope="row">항목명</th>
+        <td class="even">내용이 들어갑니다.</td>
+        <td>학교</td>
+        <td class="even">이메일</td>
+    </tr>
+</table>
+	
+</body>
+</html>

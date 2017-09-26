@@ -1,0 +1,25 @@
+package bbs;
+
+public class User {
+	private int bbs_no;
+	private String user_id;
+	private String user_data;
+	public int getBbs_no() {
+		return bbs_no;
+	}
+	public void setBbs_no(int bbs_no) {
+		this.bbs_no = bbs_no;
+	}
+	public String getUser_id() {
+		return user_id;
+	}
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
+	public String getUser_data() {
+		return user_data;
+	}
+	public void setUser_data(String user_data) {
+		this.user_data = user_data;
+	}
+}

@@ -1,0 +1,35 @@
+package mvc_parctice;
+
+import javax.jws.soap.SOAPBinding.Use;import org.apache.tomcat.util.net.SendfileKeepAliveState;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
+
+class User{
+	private String user_id;
+	private String user_name;
+	private String user_password;
+	private String user_email;
+	public User(String user_id, String user_name, String user_password, String user_email) {
+		this.user_id=user_id;
+		this.user_name=user_name;
+		this.user_password=user_password;
+		this.user_email=user_email;
+	}
+	
+	@Override
+	public String toString() {
+		return "User [user_id=" + user_id + ", user_name=" + user_name + ", user_password=" + user_password
+				+ ", user_email=" + user_email + "]";
+	}
+	
+	
+}
+
+public class MVCtest1 {
+	
+	public static void main(String[] args) {
+		User user=new User("lims2733", "이혁제", "1234", "lims2733@naver.com");
+		System.out.println(user);
+	}
+}

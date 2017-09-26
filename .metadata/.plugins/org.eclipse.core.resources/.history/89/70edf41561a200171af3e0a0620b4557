@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@page import="bbs.*"%>
+<jsp:useBean id="user" scope="request" class="bbs.User"/>
+<jsp:useBean id="bbs_db" scope="request" class="bbs.Userbbs_db"/>
+<jsp:setProperty name="user" property="*"/>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+		String bbs_no=request.getParameter("bbs_no");
+		user.setUser_id(session.getAttribute("memberid").toString());
+		if(bbs_no==null){
+			bbs_db.insert(user);
+		}
+		else{
+			bbs_db.update(user);
+		}
+		response.sendRedirect("bbs_list.jsp");
+	%>
+</body>
+</html>

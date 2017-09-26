@@ -1,0 +1,124 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@page import="user.*"%>
+<%@page import="java.util.*"%>
+<jsp:useBean id="user" scope="page"
+	class="user.User" />
+<jsp:useBean id="user_db" scope="page"
+	class="user.User_db" />
+<%
+	ArrayList<User> list=user_db.db_list();
+	String[] pic_list = new String[list.size()];
+	Iterator<User> it = list.iterator();
+	for (int i = 0; it.hasNext(); i++) {
+		pic_list[i] = it.next().getUser_picture();
+	}
+	String memberId = (String) session.getAttribute("memberid");
+	
+	if(memberId!=null){
+		User user_pic=user_db.getDB(memberId);
+		String user_pic2=user_pic.getUser_picture();
+	}
+	//git test
+%>
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MyHome</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body{
+            font-family:"Lato", sans-serif;}
+        .myslides{
+            display:none;}
+    </style>
+</head>
+<body background="universe.jpg">
+<!--navBar!-->
+<div class="w3-top">
+    <div class="w3-bar w3-black w3-card-2">
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="index.jsp" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <%
+        	if(memberId==null){
+        %>
+        <a href="login.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small">로그인</a>
+        <%
+        	}else{
+        %>
+         <a href="logout.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small">로그아웃</a>
+         <%
+        }
+         %>
+        <a href="member_list.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small">회원 리스트</a>
+        <a href="join.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small">회원가입</a>
+        <a href="bbs_form.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small">글쓰기</a>
+        <a href="bbs_list.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small">게시판</a>
+        <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+    </div>
+</div>
+
+<!-- Navbar on small screens -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+    <%
+    	if(memberId==null){
+    %>
+    <a href="login.jsp" class="w3-bar-item w3-button w3-padding-large">로그인</a>
+    <%
+    	}else{
+    %>
+    <a href="logout.jsp" class="w3-bar-item w3-button w3-padding-large">로그아웃</a>
+    <%
+    	}
+    %>
+    <a href="join.jsp" class="w3-bar-item w3-button w3-padding-large">회원가입</a>
+    <a href="member_list.jsp" class="w3-bar-item w3-button w3-padding-large">회원리스트</a>
+    <a href="bbs_list.jsp" class="w3-bar-item w3-button w3-padding-large">게시판</a>
+    
+</div>
+
+<script>
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 4000);    
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+</body>
+</html>

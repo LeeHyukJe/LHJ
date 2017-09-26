@@ -1,0 +1,4 @@
+browser-choice=1
+browsers=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<web-browsers current\="2">\r\n<system/>\r\n<external location\="C\:\\Program Files\\Internet Explorer\\iexplore.exe" name\="Internet Explorer"/>\r\n<external location\="C\:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe" name\="Chrome"/>\r\n</web-browsers>
+eclipse.preferences.version=1
+internalWebBrowserHistory=http\://localhost\:8080/mybbs/mybbs/bbs.jsp|*|http\://localhost\:8080/mybbs/mybbs/index.jsp|*|http\://localhost\:8080/mybbs/mybbs/login.jsp|*|http\://localhost\:8080/mybbs/mybbs/join_action.jsp?user_id\=lims2733&user_password\=1234&user_name\=%EC%9D%B4%ED%98%81%EC%A0%9C&user_email\=lims2733@naver.com&user_college\=%ED%95%9C%EC%84%B1%EB%8C%80%ED%95%99%EA%B5%90&user_picture\=|*|http\://localhost\:8080/mybbs/mybbs/join.jsp|*|

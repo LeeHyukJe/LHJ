@@ -1,0 +1,79 @@
+div.gate {
+	position: relative;
+	background-image: url("uni.jpg");
+	width: 100%;
+	padding: 140px 0;
+	opacity: 0.9;
+}
+
+div.winner {
+	position: absolute;
+	left: 0;
+	width: 300px;
+	top: 90px;
+	left: 600px;
+	font-size: 20pt;
+	color: orangered;
+	font-family: �굹�닎諛붾Ⅸ怨좊뵓;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+}
+
+li {
+	float: right;
+}
+
+li.home {
+	float: left;
+}
+
+li a {
+	display: inline;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li a:hover {
+	background-color: #111;
+}
+
+
+div.gradient1 {
+	position: fixed;
+	bottom: 0;
+	margin: 700px 0 0 0;
+	width: 100%;
+	padding: 100px 0;
+	background: linear-gradient(to top, gray, white);
+	text-align: center;
+	vertical-align: middle;
+}
+
+.main_container{
+	position:relative;
+	display:inline-block;
+	width:100%;
+	height:auto;
+	top:10px;
+}
+
+.main_container .picture{
+	postion:absolute;
+	width:500px;
+	height:auto;
+	float:left;
+	border:2px solid black;
+}
+
+.main_container .picture img {
+	width:100%;
+	height:auto;
+}
