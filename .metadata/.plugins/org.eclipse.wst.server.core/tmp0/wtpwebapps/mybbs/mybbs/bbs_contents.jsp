@@ -13,18 +13,17 @@
 <body>
 	<%	
 		Userbbs_db db=new Userbbs_db();
-		String bbs_no=request.getParameter("bbs_no");
+		String bbs_no=request.getParameter("user");
 		User user=db.get_db(Integer.parseInt(bbs_no));
 		System.out.print(bbs_no);
 		//getBbs_no()
 		//getUser_id()
 		//getUser_data()
-		request.setAttribute("user", user);
 	%>
-	<h4>번호 : ${user.bbs_no}</h4>
-	<h4>작성자 : ${user.user_id }</h4>
-	<h4>작성일자 : ${user.bbs_date }</h4>
+	<h4>번호 : <%=bbs_no %></h4>
+	<h4>작성자 : <%=user.getUser_id() %></h4>
+	<h4>작성일자 : <%=user.getBbs_date() %></h4>
 	<hr>
-	<h4>내용 : ${user.user_data }</h4>
+	<h4>내용 : <%=user.getUser_data() %></h4>
 </body>
 </html>

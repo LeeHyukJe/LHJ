@@ -44,7 +44,7 @@
 			<tr id="view_td">
 				<th scope="row"><a
 					href="bbs_form.jsp?bbs_no=<%=list.get(i).getBbs_no()%>"><%=list.get(i).getBbs_no()%></a></th>
-				<td><a href="bbs_contents.jsp?user=<%=list.get(i).getBbs_no()%>"><%=list.get(i).getBbs_title()%></a></td>
+				<td><a href="bbs_contents.jsp?bbs_no=<%=list.get(i).getBbs_no()%>"><%=list.get(i).getBbs_title()%></a></td>
 				<td><%=list.get(i).getUser_id()%></td>
 				<td><%=list.get(i).getBbs_date()%></td>
 			</tr>

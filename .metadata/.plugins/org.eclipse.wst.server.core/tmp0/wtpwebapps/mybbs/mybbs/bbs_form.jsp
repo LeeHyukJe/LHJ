@@ -35,7 +35,7 @@ input {
 
 textarea {
 	outline: none;
-	color: white;
+	color: black;
 	background-color: #e6fff2;
 	width: 100%;
 	height: 500px;
