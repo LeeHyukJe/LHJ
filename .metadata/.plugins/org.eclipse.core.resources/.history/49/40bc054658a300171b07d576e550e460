@@ -1,0 +1,41 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@page import="user.*" %>
+    <jsp:useBean id="user" scope="request" class="user.User"/>
+    <jsp:useBean id="user_db" scope="request" class="user.User_db"/>
+    <%
+    	String user_id=request.getParameter("user_id");
+    	String user_name=request.getParameter("user_name");
+    	String user_email=request.getParameter("user_email");
+    	String user_college=request.getParameter("user_college");
+    %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="join_css.css">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="member_change_action.jsp" style="border: 1px solid #ccc; margin: 50px 0 0 80px; width: 80%;">
+		<div class="container">
+			<label><b>아이디</b></label> 
+			<input type="text" name="user_id" value="<%=user_id%>" required> 
+				<label><b>비밀번호</b></label> <input
+				type="password" name="user_password" required> 
+				<label><b>이름</b></label> <input type="text" name="user_name" value="<%=user_name %>">
+				 <label><b>이메일</b></label>
+			<input type="text" name="user_email" value="<%=user_email%>">
+
+			<label><b>학교</b></label> 
+			<input type="text" name="user_college" value="<%=user_college%>"> 
+			<label><b>프로필사진</b></label> 
+			<input type="file" name="user_picture"> 
+			<div class="clearfix">
+				<button type="button" class="cancelbtn">Cancel</button>
+				<button type="submit" class="signupbtn">변경</button>
+			</div>
+		</div>
+	</form>
+</body>
+</html>

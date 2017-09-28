@@ -33,3 +33,18 @@
 9월 26, 2017 18:58:11.11 [7520:2932:0926/185810.598:ERROR:connection_factory_impl.cc(386)] Failed to connect to MCS endpoint with error -106
 9월 26, 2017 18:58:25.96 [7520:3244:0926/185825.959:ERROR:get_updates_processor.cc(244)] PostClientToServerMessage() failed during GetUpdates
 9월 26, 2017 18:58:33.54 [7520:2932:0926/185833.540:ERROR:connection_factory_impl.cc(386)] Failed to connect to MCS endpoint with error -106
+
+9월 27, 2017 09:07:44.49 NEW SESSION
+9월 27, 2017 09:07:44.49 [8364:9788:0927/090744.495:ERROR:ssl_client_socket_impl.cc(1129)] handshake failed; returned -1, SSL error code 1, net_error -101
+9월 27, 2017 09:07:44.52 [8364:9788:0927/090744.498:ERROR:ssl_client_socket_impl.cc(1129)] handshake failed; returned -1, SSL error code 1, net_error -101
+9월 27, 2017 09:07:44.58 [8364:9788:0927/090744.588:ERROR:ssl_client_socket_impl.cc(1129)] handshake failed; returned -1, SSL error code 1, net_error -101
+9월 27, 2017 09:07:44.60 [8364:9788:0927/090744.608:ERROR:ssl_client_socket_impl.cc(1129)] handshake failed; returned -1, SSL error code 1, net_error -100
+9월 27, 2017 09:18:57.99 [6076:3504:0927/091857.990:ERROR:socket_stream.cc(210)] Closing stream with result -101
+9월 27, 2017 09:19:01.17 [6076:3504:0927/091901.178:ERROR:connection_factory_impl.cc(386)] Failed to connect to MCS endpoint with error -21
+9월 27, 2017 12:26:41.56 [10708:14104:0927/122641.568:ERROR:socket_stream.cc(210)] Closing stream with result -101
+9월 27, 2017 12:26:47.44 [10708:14104:0927/122647.440:ERROR:connection_factory_impl.cc(386)] Failed to connect to MCS endpoint with error -21
+9월 27, 2017 13:04:44.36 [13540:9264:0927/130444.362:ERROR:connection_factory_impl.cc(386)] Failed to connect to MCS endpoint with error -106
+9월 27, 2017 13:04:51.02 [13540:9264:0927/130451.026:ERROR:connection_factory_impl.cc(386)] Failed to connect to MCS endpoint with error -21
+9월 27, 2017 13:58:54.44 [13540:9264:0927/135854.449:ERROR:socket_stream.cc(210)] Closing stream with result -101
+9월 27, 2017 13:58:54.62 [13540:9264:0927/135854.621:ERROR:connection_factory_impl.cc(386)] Failed to connect to MCS endpoint with error -21
+9월 27, 2017 13:58:55.83 [13540:8184:0927/135855.831:ERROR:gcm_channel_status_request.cc(127)] GCM channel request failed.

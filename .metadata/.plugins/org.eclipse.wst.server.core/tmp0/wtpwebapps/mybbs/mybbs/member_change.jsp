@@ -17,6 +17,17 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<%
+		String session_id=(String)session.getAttribute("memberid");
+		if(!session_id.equals(user_id)){
+			%>
+				<script>
+					alert("본인이 올린 글만 수정이 가능하다구  ㅇㅅㅇ;;");
+					history.go(-1);
+				</script>
+			<%
+		}
+	%>
 	<form action="member_change_action.jsp" style="border: 1px solid #ccc; margin: 50px 0 0 80px; width: 80%;">
 		<div class="container">
 			<label><b>아이디</b></label> 

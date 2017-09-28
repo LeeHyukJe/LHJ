@@ -12,17 +12,16 @@
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		String bbs_no = request.getParameter("bbs_no");
+		String delete=request.getParameter("delete");
 		User user = new User();
 		user.setUser_id(session.getAttribute("memberid").toString()); //user_id
 		user.setBbs_title(title); //bbs_title
 		user.setUser_data(content); //user_data
 		Userbbs_db bbs_db = new Userbbs_db();
 		if (bbs_no.equals("null")) { //게시판 글쓰기로 들어오면
-			%>
-				<jsp:include page="fileServer.jsp"/>
-			<%
-		bbs_db.insert(user);
-		} else { //수정으로 넘어오면
+			bbs_db.insert(user);
+		} 
+		else { //수정으로 넘어오면
 			user.setBbs_no(Integer.parseInt(bbs_no));
 			bbs_db.update(user);
 		}

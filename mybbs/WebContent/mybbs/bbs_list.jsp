@@ -8,6 +8,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <link rel="stylesheet" href="bbs.css">
 <title>Insert title here</title>
+<script>
+	function bbs_view(){
+		var tr=document.createElement("tr");
+		
+		tr.innerHTML=document.getElementById("view_td").innerHTML;
+		document.getElementById("stick_td").appendChild(tr);
+	}
+</script>
 </head>
 <body>
 	<h1 align="center">게시판!</h1>
@@ -16,15 +24,14 @@
 	<table class="type10">
 		<thead>
 			<tr>
-				<th scope="cols">번호</th>
-				<th scope="cols">제목</th>
-				<th scope="cols">작성자</th>
-				<th scpope="cols">내용</th>
-				<th scope="cols">날짜</th>
-				<th scope="cols">조회수</th>
+				<th>번호</th>
+				<th>제목</th>
+				<th>작성자</th>
+				<th>날짜</th>
+				<th>조회수</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody id="stick_td">
 			<%
 				Userbbs_db bbs = new Userbbs_db();
 				ArrayList<User> list = bbs.bbs_list();
@@ -34,15 +41,15 @@
 					if (list.size() > 0) {
 						for (int i = 0; i < list.size(); i++) {
 			%>
-			<tr>
+			<tr id="view_td">
 				<th scope="row"><a
 					href="bbs_form.jsp?bbs_no=<%=list.get(i).getBbs_no()%>"><%=list.get(i).getBbs_no()%></a></th>
-				<td><%=list.get(i).getBbs_title()%></td>
+				<td><a href="bbs_contents.jsp?bbs_no=<%=list.get(i).getBbs_no()%>"><%=list.get(i).getBbs_title()%></a></td>
 				<td><%=list.get(i).getUser_id()%></td>
-				<td><%=list.get(i).getUser_data()%></td>
 				<td><%=list.get(i).getBbs_date()%></td>
 			</tr>
 			<%
+					
 				}
 					}
 				}else{

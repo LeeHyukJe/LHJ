@@ -1,7 +1,12 @@
 package bbs;
-import java.util.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
-import java.sql.*;
 public class Userbbs_db {
 	Connection conn;
 	PreparedStatement pstmt;
@@ -11,6 +16,9 @@ public class Userbbs_db {
 	String jdbc_url;
 	
 
+	Date date=new Date();
+	SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+	
 	public void connect() {
 		if(System.getProperty("user.name").equals("lims2733")) {
 			jdbc_driver="com.mysql.jdbc.Driver";
@@ -81,7 +89,7 @@ public class Userbbs_db {
 	
 	public User get_db(int bbs_no) {
 		connect();
-		String sql="select bbs_data from bbs where bbs_no=?";
+		String sql="select * from bbs where bbs_no=?";
 		User user=new User();
 		try {
 			pstmt=conn.prepareStatement(sql);
@@ -105,12 +113,13 @@ public class Userbbs_db {
 	public boolean insert(User user) {
 		connect();
 		String sql="insert into bbs (user_id, bbs_title, user_data, bbs_date) values(?,?,?,?)";
+		
 		try {
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, user.getUser_id());
 			pstmt.setString(2, user.getBbs_title());
 			pstmt.setString(3, user.getUser_data());
-			pstmt.setString(4, new Date().toString());
+			pstmt.setString(4, sdf.format(date));
 			pstmt.executeUpdate();
 			return true;
 		} catch (Exception e) {
@@ -129,13 +138,29 @@ public class Userbbs_db {
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, user.getBbs_title());
 			pstmt.setString(2, user.getUser_data());
-			pstmt.setString(3, new Date().toString());
+			pstmt.setString(3, sdf.format(date));
 			pstmt.setInt(4, user.getBbs_no());
 			pstmt.executeUpdate();
 			return true;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			disconnect();
+		}
+		return false;
+	}
+	
+	public boolean delete(int bbs_no) {
+		String sql="delete from bbs where bbs=?";
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(bbs_no, 1);
+			pstmt.executeUpdate();
+			return true;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
 		}finally {
 			disconnect();
 		}
